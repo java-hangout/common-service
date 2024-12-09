@@ -57,10 +57,10 @@ public class JwtUtil {
         List<String> roles = (List<String>) claims.get("roles");
         return roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
     }
-    /*// Check if the token is expired
+    // Check if the token is expired
     public boolean isTokenExpired(String token) {
         return extractClaims(token).getExpiration().before(new Date());  // Compare token expiration with current time
-    }*/
+    }
 
     /*// Validate the JWT token by comparing username and expiration status
     public boolean validateToken(String token, String username) {
